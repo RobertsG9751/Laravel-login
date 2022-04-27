@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.top{
+    z-index: 10;
+    position: absolute;
+    height: 38%;
+    width: 100%;
+    background-color: #5A189A;
+    clip-path: polygon(0 0, 100% 0%, 100% 60%, 0 100%);
+}
+.mid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-color: #F8F9FA;
+}
+.bot{
+    bottom:0;
+    z-index: 10;
+    position: absolute;
+    height: 38%;
+    width: 100%;
+    background-color: #5A189A;
+    clip-path: polygon(0 43%, 100% 0%, 100% 100%, 0 100%);
+} 
+.content{
+    z-index: 15;
+    width: 500px;
+    height: 50%;
+    background-color: #DEE2E6;
+    border-radius: 20%;
+    box-shadow: 1px 1px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttons{
+    /* display: none; */
+    display: flex;
+    height: 50%;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.btn{
+    cursor: pointer;
+    font-size: 150%;
+    border: none;
+    color: white;
+    border-radius: 24px;
+    width: 180px;
+    height: 75px;
+    background-color: #5A189A;
+    transition: all .2s;
+}
+.btn:hover, .btnShort:hover{
+    transform: scale(1.05) translateY(-2px);
+}
+.btn:active, .btnShort:active{
+    transform: translateY(0px);
+}
+.login{
+    display: none;
+    height: 50%;
+    width: 70%;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center
+}
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    width: 100%;
+    height: 100%;
+}
+.inputField{
+    font-size: 100%;
+    width: 300px;
+    height: 33px;
+}
+label{
+    font-size: 125%;
+}
+.register{
+    display: none;
+    height: 85%;
+    width: 70%;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+.registerForm{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.btnShort{
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 150%;
+    border: none;
+    color: white;
+    border-radius: 24px;
+    width: 160px;
+    height: 50px;
+    background-color: #5A189A;
+    transition: all .2s;
+}
+.regField{
+    width: 90%;
+}
+.inputReg{
+    font-size: 125%;
+    width: 100%;
+    height: 30px;
+}
+.backBtn{
+    display: inline-block;
+    cursor: pointer;
+    color: #5A189A;
+}
+.backBtn:hover{
+    text-decoration: underline;
+}
+.user{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+table, th, td{
+    border: 1px solid #5A189A;
+    border-collapse: collapse;
+}
+th,td{
+    width: 90px;
+    text-align: center;
+}

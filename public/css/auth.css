@@ -1,0 +1,42 @@
+.root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 94%;
+    width: 100%;
+}
+.login{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 1px 1px 6px;
+    border-radius:15px;
+    height: 50%;
+    background-color: #fff;
+}
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.input{
+    background-color: #f8f9fa;
+    margin-bottom: 7%;
+    border: 1px solid black;
+    height: 30px;
+    width: 100%;
+}
+.inputBtn{
+    margin-top: 3%;
+    width: 33%;
+    background-color: #5a189a;
+    color: white;
+    border-radius: 12px;
+    height: 25px;
+    transition: all .2s;
+}
+.inputBtn:hover{
+    transform: scale(1.05);
+}
