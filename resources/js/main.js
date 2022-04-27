@@ -147,3 +147,4 @@ registerForm.addEventListener("submit", function(e){
     if(regData[3].value!==regData[4].value) return alert("Passwords dont match")
     registerFunc(regData[0].value, regData[1].value, regData[2].value, regData[3].value, regData[4].value)
 })
+console.log("test")
