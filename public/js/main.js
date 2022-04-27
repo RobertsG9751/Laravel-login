@@ -907,7 +907,7 @@ var goToUserPage = /*#__PURE__*/function () {
             login.style.display = "none";
             user.style.display = "flex";
             _context.next = 4;
-            return fetch('http://127.0.0.1:8000/user', {
+            return fetch('https://laravellogin-rg.herokuapp.com/user', {
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json',
@@ -954,7 +954,7 @@ var loginFunc = /*#__PURE__*/function () {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return fetch('http://127.0.0.1:8000/api/login', {
+            return fetch('https://laravellogin-rg.herokuapp.com/api/login', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -1002,7 +1002,7 @@ var logoutFunc = /*#__PURE__*/function () {
         switch (_context3.prev = _context3.next) {
           case 0:
             _context3.next = 2;
-            return fetch('http://127.0.0.1:8000/api/logout', {
+            return fetch('https://laravellogin-rg.herokuapp.com/api/logout', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -1051,7 +1051,7 @@ var registerFunc = /*#__PURE__*/function () {
         switch (_context4.prev = _context4.next) {
           case 0:
             _context4.next = 2;
-            return fetch('http://127.0.0.1:8000/api/register', {
+            return fetch('https://laravellogin-rg.herokuapp.com/api/register', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -1098,7 +1098,8 @@ var registerFunc = /*#__PURE__*/function () {
   return function registerFunc(_x3, _x4, _x5, _x6, _x7) {
     return _ref4.apply(this, arguments);
   };
-}();
+}(); // Parbauda kad tiks iesniegta registresanas forma
+
 
 registerForm.addEventListener("submit", function (e) {
   e.preventDefault();
