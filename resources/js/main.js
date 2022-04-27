@@ -45,7 +45,7 @@ const goToUserPage = async function(){
     login.style.display = "none";
     user.style.display = "flex"; 
 
-    const fetchReq = await fetch('http://127.0.0.1:8000/user', {
+    const fetchReq = await fetch('https://laravellogin-rg.herokuapp.com/user', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ if(localStorage.getItem("token")){
 
 // Login funkcija kas autorize lietotaju
 const loginFunc = async function(email, password){
-    const fetchReq = await fetch('http://127.0.0.1:8000/api/login', {
+    const fetchReq = await fetch('https://laravellogin-rg.herokuapp.com/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ const loginFunc = async function(email, password){
 
 // Logout funkcija kas izraksta lietotaju
 const logoutFunc = async function(){
-    const fetchReq = await fetch('http://127.0.0.1:8000/api/logout', {
+    const fetchReq = await fetch('https://laravellogin-rg.herokuapp.com/api/logout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ logoutBtn.addEventListener("click", function(e){
     buttons.style.display = "flex"
 })
 const registerFunc = async function(name, surname, email, pass, pass_conf){
-    const fetchReq = await fetch('http://127.0.0.1:8000/api/register', {
+    const fetchReq = await fetch('https://laravellogin-rg.herokuapp.com/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
