@@ -142,6 +142,8 @@ const registerFunc = async function(name, surname, email, pass, pass_conf){
         return alert("There was an error registering")
     }
     }
+
+// Parbauda kad tiks iesniegta registresanas forma
 registerForm.addEventListener("submit", function(e){
     e.preventDefault();
     if(regData[3].value!==regData[4].value) return alert("Passwords dont match")
