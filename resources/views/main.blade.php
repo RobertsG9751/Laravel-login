@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
-    <script defer type="module" src="{{asset('js/main.js')}}"></script>
+    <script defer src="{{asset('js/main.js')}}"></script>
 </head>
 <body>
     <div class="top"></div>
