@@ -4,9 +4,11 @@ Uzspiežot uz login pogas, tiek paradīta login forma, kuru pareizi aizpildot, t
 
 Uzspiežot Register pogu, tiek parādīta Register forma, kuru pareizi aizpildot, tiks izveidots Jūsu konts. In
 
-API routes: [
+API routes: {
     /api/login POST,
     /api/register POST,
     /api/logout POST autorizētiem lietotajiem,
     /logout POST autorizētiem lietotajiem
-]
+}
+
+Es izvēlējos savu projektu taisīt uz Laravel, jo tas ir šajā industrijā plaši izmantots rīks, kas darbu ar datubāzēm un maršrutēšanu padara ļoti vienkāršu, salīdzinot ar citān valodān, kā Node.js vai PHP. 

@@ -1,3 +1,5 @@
+// Importē funckijas
+import { goToUserPage } from "./functions.js"
 // Dabon visus HTML elementus
 const buttons = document.querySelector(".buttons");
 const login = document.querySelector(".login");
@@ -40,37 +42,37 @@ loginForm.addEventListener("submit", function(e){
     loginFunc(loginEmail.value, loginPassword.value)
 })
 
-// Pec autentifikacijas, pariet uz lietotaja lapu
-const goToUserPage = async function(){
-    login.style.display = "none";
-    user.style.display = "flex"; 
+// // Pec autentifikacijas, pariet uz lietotaja lapu
+// const goToUserPage = async function(){
+//     login.style.display = "none";
+//     user.style.display = "flex"; 
 
-    const fetchReq = await fetch('https://laravellogin-rg.herokuapp.com/user', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem("token")}`
-        },
-    })
-    const awaitData = await fetchReq.json()
-    // Parāda lietotajam savus datus
-    userField.insertAdjacentHTML("beforeend", `
-        <table>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Surame</th>
-                <th>Email</th>
-            </tr>
-            <tr>
-                <td>${awaitData.id}</td>
-                <td>${awaitData.name}</td>
-                <td>${awaitData.surname}</td>
-                <td>${awaitData.email}</td>
-            </tr>
-        </table>
-    `)
-}
+//     const fetchReq = await fetch('https://laravellogin-rg.herokuapp.com/user', {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Authorization': `Bearer ${localStorage.getItem("token")}`
+//         },
+//     })
+//     const awaitData = await fetchReq.json()
+//     // Parāda lietotajam savus datus
+//     userField.insertAdjacentHTML("beforeend", `
+//         <table>
+//             <tr>
+//                 <th>Id</th>
+//                 <th>Name</th>
+//                 <th>Surame</th>
+//                 <th>Email</th>
+//             </tr>
+//             <tr>
+//                 <td>${awaitData.id}</td>
+//                 <td>${awaitData.name}</td>
+//                 <td>${awaitData.surname}</td>
+//                 <td>${awaitData.email}</td>
+//             </tr>
+//         </table>
+//     `)
+// }
 // Parbauda vai lietotajam ir autorizacijas tokens. Ja ir tad aizvada lietotaju uz lapu
 if(localStorage.getItem("token")){
     buttons.style.display = "none";
