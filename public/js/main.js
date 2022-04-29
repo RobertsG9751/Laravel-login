@@ -12,6 +12,69 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 /***/ }),
 
+/***/ "./resources/js/functions.js":
+/*!***********************************!*\
+  !*** ./resources/js/functions.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "goToUserPage": () => (/* binding */ goToUserPage)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+// Pec autentifikacijas, pariet uz lietotaja lapu
+var goToUserPage = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+    var fetchReq, awaitData;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            login.style.display = "none";
+            user.style.display = "flex";
+            _context.next = 4;
+            return fetch('https://laravellogin-rg.herokuapp.com/user', {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer ".concat(localStorage.getItem("token"))
+              }
+            });
+
+          case 4:
+            fetchReq = _context.sent;
+            _context.next = 7;
+            return fetchReq.json();
+
+          case 7:
+            awaitData = _context.sent;
+            // Parāda lietotajam savus datus
+            userField.insertAdjacentHTML("beforeend", "\n        <table>\n            <tr>\n                <th>Id</th>\n                <th>Name</th>\n                <th>Surame</th>\n                <th>Email</th>\n            </tr>\n            <tr>\n                <td>".concat(awaitData.id, "</td>\n                <td>").concat(awaitData.name, "</td>\n                <td>").concat(awaitData.surname, "</td>\n                <td>").concat(awaitData.email, "</td>\n            </tr>\n        </table>\n    "));
+
+          case 9:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function goToUserPage() {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+/***/ }),
+
 /***/ "./node_modules/regenerator-runtime/runtime.js":
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
@@ -854,6 +917,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions.js */ "./resources/js/functions.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -861,8 +925,8 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 // Importē funckijas
-//import { goToUserPage } from "./functions.js"
-// Dabon visus HTML elementus
+ // Dabon visus HTML elementus
+
 var buttons = document.querySelector(".buttons");
 var login = document.querySelector(".login");
 var register = document.querySelector(".register");
@@ -898,64 +962,52 @@ loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
   loginFunc(loginEmail.value, loginPassword.value);
 }); // Pec autentifikacijas, pariet uz lietotaja lapu
-
-var goToUserPage = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-    var fetchReq, awaitData;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            login.style.display = "none";
-            user.style.display = "flex";
-            _context.next = 4;
-            return fetch('https://laravellogin-rg.herokuapp.com/user', {
-              method: 'GET',
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': "Bearer ".concat(localStorage.getItem("token"))
-              }
-            });
-
-          case 4:
-            fetchReq = _context.sent;
-            _context.next = 7;
-            return fetchReq.json();
-
-          case 7:
-            awaitData = _context.sent;
-            // Parāda lietotajam savus datus
-            userField.insertAdjacentHTML("beforeend", "\n        <table>\n            <tr>\n                <th>Id</th>\n                <th>Name</th>\n                <th>Surame</th>\n                <th>Email</th>\n            </tr>\n            <tr>\n                <td>".concat(awaitData.id, "</td>\n                <td>").concat(awaitData.name, "</td>\n                <td>").concat(awaitData.surname, "</td>\n                <td>").concat(awaitData.email, "</td>\n            </tr>\n        </table>\n    "));
-
-          case 9:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-
-  return function goToUserPage() {
-    return _ref.apply(this, arguments);
-  };
-}(); // Parbauda vai lietotajam ir autorizacijas tokens. Ja ir tad aizvada lietotaju uz lapu
-
+// const goToUserPage = async function(){
+//     login.style.display = "none";
+//     user.style.display = "flex"; 
+//     const fetchReq = await fetch('https://laravellogin-rg.herokuapp.com/user', {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Authorization': `Bearer ${localStorage.getItem("token")}`
+//         },
+//     })
+//     const awaitData = await fetchReq.json()
+//     // Parāda lietotajam savus datus
+//     userField.insertAdjacentHTML("beforeend", `
+//         <table>
+//             <tr>
+//                 <th>Id</th>
+//                 <th>Name</th>
+//                 <th>Surame</th>
+//                 <th>Email</th>
+//             </tr>
+//             <tr>
+//                 <td>${awaitData.id}</td>
+//                 <td>${awaitData.name}</td>
+//                 <td>${awaitData.surname}</td>
+//                 <td>${awaitData.email}</td>
+//             </tr>
+//         </table>
+//     `)
+// }
+// Parbauda vai lietotajam ir autorizacijas tokens. Ja ir tad aizvada lietotaju uz lapu
 
 if (localStorage.getItem("token")) {
   buttons.style.display = "none";
   user.style.display = "flex";
-  goToUserPage();
+  (0,_functions_js__WEBPACK_IMPORTED_MODULE_1__.goToUserPage)();
 } // Login funkcija kas autorize lietotaju
 
 
 var loginFunc = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(email, password) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(email, password) {
     var fetchReq, awaitRes;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
       while (1) {
-        switch (_context2.prev = _context2.next) {
+        switch (_context.prev = _context.next) {
           case 0:
-            _context2.next = 2;
+            _context.next = 2;
             return fetch('https://laravellogin-rg.herokuapp.com/api/login', {
               method: 'POST',
               headers: {
@@ -968,42 +1020,42 @@ var loginFunc = /*#__PURE__*/function () {
             });
 
           case 2:
-            fetchReq = _context2.sent;
-            _context2.next = 5;
+            fetchReq = _context.sent;
+            _context.next = 5;
             return fetchReq.json();
 
           case 5:
-            awaitRes = _context2.sent;
+            awaitRes = _context.sent;
 
             if (awaitRes.token) {
               localStorage.setItem("token", awaitRes.token);
-              goToUserPage();
+              (0,_functions_js__WEBPACK_IMPORTED_MODULE_1__.goToUserPage)();
             } else {
               alert("Bad login");
             }
 
           case 7:
           case "end":
-            return _context2.stop();
+            return _context.stop();
         }
       }
-    }, _callee2);
+    }, _callee);
   }));
 
   return function loginFunc(_x, _x2) {
-    return _ref2.apply(this, arguments);
+    return _ref.apply(this, arguments);
   };
 }(); // Logout funkcija kas izraksta lietotaju
 
 
 var logoutFunc = /*#__PURE__*/function () {
-  var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
     var fetchReq, awaitRes;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
       while (1) {
-        switch (_context3.prev = _context3.next) {
+        switch (_context2.prev = _context2.next) {
           case 0:
-            _context3.next = 2;
+            _context2.next = 2;
             return fetch('https://laravellogin-rg.herokuapp.com/api/logout', {
               method: 'POST',
               headers: {
@@ -1016,24 +1068,24 @@ var logoutFunc = /*#__PURE__*/function () {
             });
 
           case 2:
-            fetchReq = _context3.sent;
-            _context3.next = 5;
+            fetchReq = _context2.sent;
+            _context2.next = 5;
             return fetchReq.json();
 
           case 5:
-            awaitRes = _context3.sent;
+            awaitRes = _context2.sent;
             alert(awaitRes.message);
 
           case 7:
           case "end":
-            return _context3.stop();
+            return _context2.stop();
         }
       }
-    }, _callee3);
+    }, _callee2);
   }));
 
   return function logoutFunc() {
-    return _ref3.apply(this, arguments);
+    return _ref2.apply(this, arguments);
   };
 }();
 
@@ -1046,13 +1098,13 @@ logoutBtn.addEventListener("click", function (e) {
 });
 
 var registerFunc = /*#__PURE__*/function () {
-  var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4(name, surname, email, pass, pass_conf) {
+  var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(name, surname, email, pass, pass_conf) {
     var fetchReq, parseData;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
       while (1) {
-        switch (_context4.prev = _context4.next) {
+        switch (_context3.prev = _context3.next) {
           case 0:
-            _context4.next = 2;
+            _context3.next = 2;
             return fetch('https://laravellogin-rg.herokuapp.com/api/register', {
               method: 'POST',
               headers: {
@@ -1068,37 +1120,37 @@ var registerFunc = /*#__PURE__*/function () {
             });
 
           case 2:
-            fetchReq = _context4.sent;
-            _context4.next = 5;
+            fetchReq = _context3.sent;
+            _context3.next = 5;
             return fetchReq.json();
 
           case 5:
-            parseData = _context4.sent;
+            parseData = _context3.sent;
 
             if (!parseData.token) {
-              _context4.next = 12;
+              _context3.next = 12;
               break;
             }
 
             alert("Registered!");
             buttons.style.display = "flex";
             register.style.display = "none";
-            _context4.next = 13;
+            _context3.next = 13;
             break;
 
           case 12:
-            return _context4.abrupt("return", alert("There was an error registering"));
+            return _context3.abrupt("return", alert("There was an error registering"));
 
           case 13:
           case "end":
-            return _context4.stop();
+            return _context3.stop();
         }
       }
-    }, _callee4);
+    }, _callee3);
   }));
 
   return function registerFunc(_x3, _x4, _x5, _x6, _x7) {
-    return _ref4.apply(this, arguments);
+    return _ref3.apply(this, arguments);
   };
 }(); // Parbauda kad tiks iesniegta registresanas forma
 
