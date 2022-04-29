@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/js/login.js": "/js/login.js",
     "/js/main.js": "/js/main.js",
+    "/js/functions.js": "/js/functions.js",
     "/css/main.css": "/css/main.css",
     "/css/app.css": "/css/app.css",
     "/css/auth.css": "/css/auth.css"
